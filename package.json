@@ -4,12 +4,16 @@
 	"scripts": {
 		"dev": "wrangler dev",
 		"deploy": "wrangler deploy --minify",
-		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
+		"cf-typegen": "wrangler types --env-interface CloudflareBindings",
+		"build-game": "esbuild src/game.ts --bundle --minify --outfile=public/game.js"
 	},
 	"dependencies": {
-		"hono": "^4.8.5"
+		"hono": "^4.8.5",
+		"three": "^0.169.0"
 	},
 	"devDependencies": {
+		"@types/three": "^0.178.1",
+		"esbuild": "^0.25.6",
 		"wrangler": "^4.24.3"
 	}
 }
